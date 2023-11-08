@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    
+    
+ <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+
+    <style>
+    
+        *{
+            margin: 0;
+            padding: 0;
+        }
+.timeline {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 700px;
+  position: relative;
+}
+.timeline__content-title {
+  font-weight: normal;
+  font-size: 66px;
+  margin: -10px 0 0 0;
+  transition: 0.4s;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+}
+.timeline__content-title2 {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+  transition: 0.4s;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+}
+.timeline__content-desc {
+  margin: 0;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, .7);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: normal;
+  line-height: 25px;
+}
+.timeline:before {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  margin-left: -1px;
+  content: "";
+  background: rgba(255, 255, 255, .07);
+}
+@media only screen and (max-width: 767px) {
+  .timeline:before {
+    left: 40px;
+  }
+}
+.timeline-item {
+  padding: 40px 0;
+  opacity: 0.3;
+  filter: blur(2px);
+  transition: 0.5s;
+  box-sizing: border-box;
+  width: calc(50% - 40px);
+  display: flex;
+  position: relative;
+  transform: translateY(-80px);
+}
+.timeline-item:before {
+  content: attr(data-text);
+  letter-spacing: 3px;
+  width: 100%;
+  position: absolute;
+  color: rgba(255, 255, 255, .5);
+  font-size: 13px;
+  font-family: 'Pathway Gothic One', sans-serif;
+  border-left: 2px solid rgba(255, 255, 255, .5);
+  top: 70%;
+  margin-top: -5px;
+  padding-left: 15px;
+  opacity: 0;
+  right: calc(-100% - 56px);
+}
+.timeline-item:nth-child(even) {
+  align-self: flex-end;
+}
+.timeline-item:nth-child(even):before {
+  right: auto;
+  text-align: right;
+  left: calc(-100% - 56px);
+  padding-left: 0;
+  border-left: none;
+  border-right: 2px solid rgba(255, 255, 255, .5);
+  padding-right: 15px;
+}
+.timeline-item--active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+}
+.timeline-item--active:before {
+  top: 50%;
+  transition: 0.3s all 0.2s;
+  opacity: 1;
+}
+.timeline-item--active .timeline__content-title {
+  margin: -50px 0 20px 0;
+}
+@media only screen and (max-width: 767px) {
+  .timeline-item {
+    align-self: baseline !important;
+    width: 100%;
+    padding: 0 30px 150px 80px;
+  }
+  .timeline-item:before {
+    left: 10px !important;
+    padding: 0 !important;
+    top: 50px;
+    text-align: center !important;
+    width: 60px;
+    border: none !important;
+  }
+  .timeline-item:last-child {
+    padding-bottom: 40px;
+  }
+}
+.timeline__img {
+  max-width: 100%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+}
+.timeline-container {
+  width: 100%;
+  position: relative;
+  padding: 80px 0;
+  transition: 0.3s ease 0s;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.timeline-container:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+ background: rgba(0,0,0,0.6);
+  content: "";
+}
+.timeline-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+.timeline-header__title {
+  color: #fff;
+  font-size: 58px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
+.timeline-header__subtitle {
+  color: rgba(255, 255, 255, .5);
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 16px;
+  letter-spacing: 5px;
+  margin: 10px 0 0 0;
+  font-weight: normal;
+}
+
+.timeline-header__subtitle2{
+    color: rgba(255, 255, 255, .5);
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin: 10px 0 0 0;
+  font-weight: normal;
+  line-height: 15px
+
+}
+.demo-footer {
+  padding: 60px 0;
+  text-align: center;
+}
+.demo-footer a {
+  color: #999;
+  display: inline-block;
+  font-family: Cardo;
+}
+
+    </style>
+</head>
+<body>
+    <audio src="./Inconsciousness - Mini Vandals.mp3" autoplay loop controls id="myAudio">오디오 지원되지 않는 브라우저</audio>
+     <div class="timeline-container" id="timeline-1">
+  <div class="timeline-header">
+    <h2 class="timeline-header__title">KLO(켈로부대),8240부대</h2>
+    <h3 class="timeline-header__subtitle">Korea Liaison Office</h3>
+    <h4 class="timeline-header__subtitle2">한국전쟁 당시 미군이 북한의 지리와 언어에 익숙한 이북 출신 한국인들을 모집, <br>북한 지역에서 정보 수집과 게릴라전 등을 비공식적으로 수행한 특수부대로, 
+        <br> 정식명칭은 미 육군 제8240부대이다. </h4>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item" data-text="1949년 6월 1일">
+      <div class="timeline__content"><img class="timeline__img" src="./img/1.jpeg" />
+        <h2 class="timeline__content-title">1949</h2>
+        <h3 class="timeline__content-title2">시초</h3>
+        <p class="timeline__content-desc">한국 전쟁 발발 전인 1948년 8월 24일 미국 극동사령부는 북에서의 첩보 활동을 하기 위한 민간 대북첩보<br>조직을 결성하게 되고
+            현재 을지로 1가 롯데호텔 자리에 있던 우리나라 최초 상용호텔인 반도호텔 202호실에 작전 본부를 설치하게 된다.그리고 다음해 6월 1일 정식적인 부대로 결성된다.미군 소속의 민간 첩보부대였지만
+            임무는 대북 첩보임무였기에 북쪽 지리에 능통한 이북 출신 한국 청년들로 부대를 구성하게 된다.KLO 부대는 직역하면"주한 첩보 연락처"또는 "한국 연락 사무소"이다."
+        </p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="1950년 9월 15일-1950년 9월 16일 ">
+        
+      <div class="timeline__content"><img class="timeline__img" src="./img/맥아더장군.jpeg"/>
+        <h2 class="timeline__content-title">1950</h2>
+        <h3 class="timeline__content-title2">인천상륙작전</h3>
+        <p class="timeline__content-desc">맥아더 사령관의 지휘에 따라 상륙 지점 확보에서 중요한 팔미도 등대를 접수하는 임무이다.
+            팔미도 등대는 인천 상륙작전을 시행할때 수로를 확보하는 길목이었기에 매우 중요한 거점이었다.어두운 밤,켈로부대는 노를 저어 잠입했고
+            적의 포대 위치와 수,적의 보급로 이동 경로 등을 파악했으며,상륙작전 개시와 함께 등대를 점등하여 성공적으로 임무를 수행했다.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-text="1951년 5월 26~28일,">
+        <div class="timeline__content"><img class="timeline__img" src="./img/10.png"/>
+          <h2 class="timeline__content-title">1951</h2>
+          <h3 class="timeline__content-title2">화천 발전소 탈환 작전</h3>
+          <p class="timeline__content-desc">'화천발전소 탈환 작전'은 성공한 작전으로 당시 화천발전소에 중공군 진지와 포병부대가 있는 것으로 알려져 공습이 쉽지 않았는데 켈로부대원들이 이 대포와 전차가 유엔군 정찰기를 속이기 위한 가짜라는 사실을 밝혀내게 되었고 바로 중공군 진지를 공습하여 화천발전소 탈환에 성공하였습니다. </p>
+        </div>
+      </div>
+
+    <div class="timeline-item" data-text="1952년 1월">
+      <div class="timeline__content"><img class="timeline__img" src="./img/블루.png"/>
+        <h2 class="timeline__content-title">1952</h2>
+        <h3 class="timeline__content-title2">블루 드래곤 작전</h3>
+        <p class="timeline__content-desc">'블루 드래곤 작전'은 미군 조종사 구출작전으로 대외비로 지난 60년간 공개되지 않았다. 
+
+            1952년 1월부터 시작한 이 작전은 평양 북쪽에 불시착 한 미군 조종사 5명을 찾는 임무로 생환 가능이 희박했으며 당시 켈로부대원 170여명이 투입되었다. 안타깝게도 북한군 중공군과의 교전끝에 전원 전사로 끝나게 되었다. 
+            </p>
+      </div>
+    </div>
+    
+    <div class="timeline-item" data-text="1953년 9월">
+      <div class="timeline__content"><img class="timeline__img" src="./img/11.png"/>
+        <h2 class="timeline__content-title">1953</h2>
+        <h3 class="timeline__content-title2">해체</h3>
+        <p class="timeline__content-desc">휴전협정이 체결된 후 1953년 9월 전격 해체되었다.
+          그 후 이들 중 군에 계속 남기를 원한 인원들은 휴전 후에 미군 극동군사령부 소속에서 한국군 소속으로 이관된 8240부대에서 계속 복무하다가, 
+          1954년에 8240부대가 해체되자 일부는 육군의 여러 부대들로 갔고, 또 다른 일부는 HID에 배속되기도 했다. 
+          그리고 육군 부대들로 간 켈로부대원들 중 일부가 재소집되어 1957년에 육군본부 특전감실이 주도한 육군 특수부대 창설준비 요원이 되었고
+          이듬해 일본 오키나와의 미 육군 특전부대(그린베레) 제1특전단에서 교육받고 온 뒤에 이들을 창설요원으로 하여 
+          제1공수특전단(현재의 특전사 제1공수특전여단)을 창설하게 된다.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-text="1953~">
+      <div class="timeline__content"><img class="timeline__img" src="./img/13.png"/>
+        <h2 class="timeline__content-title">1953~</h2>
+        <h3 class="timeline__content-title2">해체 후</h3>
+        <p class="timeline__content-desc">휴전 이후 남측 지역으로 복귀하지 않고 북한 지역에 남아서 활동하던 KLO부대원들은 대부분 담당부대에서 통신망을 끊어버려 휴전협정과 동시에 한국과 미국 정부 양국에서 버림받았다.
+          첩보부대에선 이런 일들을 용도폐기 되었다고 표현한다. 
+          육군 첩보부대에 흡수된 상당수는 북에 남겨진 동료들을 구해오려는 비공식 활동을 휴전 이후에도 수 년간 계속했다.
+          휴전협정 체결 전 북한 해안가의 대부분의 섬을 차지하고 있었던 그들은 휴전과 더불어 고스란히 넘겨주게 되었다며 한탄했다.</p>
+      </div>
+    </div>
+    
+  
+  
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+ <script>
+    
+    (function($) {
+  $.fn.timeline = function() {
+    var selectors = {
+      id: $(this),
+      item: $(this).find(".timeline-item"),
+      activeClass: "timeline-item--active",
+      img: ".timeline__img"
+    };
+    selectors.item.eq(0).addClass(selectors.activeClass);
+    selectors.id.css(
+      "background-image",
+      "url(" +
+        selectors.item
+          .first()
+          .find(selectors.img)
+          .attr("src") +
+        ")"
+    );
+    var itemLength = selectors.item.length;
+    $(window).scroll(function() {
+      var max, min;
+      var pos = $(this).scrollTop();
+      selectors.item.each(function(i) {
+        min = $(this).offset().top;
+        max = $(this).height() + $(this).offset().top;
+        var that = $(this);
+        if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+          selectors.item.removeClass(selectors.activeClass);
+          selectors.id.css(
+            "background-image",
+            "url(" +
+              selectors.item
+                .last()
+                .find(selectors.img)
+                .attr("src") +
+              ")"
+          );
+          selectors.item.last().addClass(selectors.activeClass);
+        } else if (pos <= max - 40 && pos >= min) {
+          selectors.id.css(
+            "background-image",
+            "url(" +
+              $(this)
+                .find(selectors.img)
+                .attr("src") +
+              ")"
+          );
+          selectors.item.removeClass(selectors.activeClass);
+          $(this).addClass(selectors.activeClass);
+        }
+      });
+    });
+  };
+})(jQuery);
+
+$("#timeline-1").timeline();
+
+    </script>
+</body>
+</html>
